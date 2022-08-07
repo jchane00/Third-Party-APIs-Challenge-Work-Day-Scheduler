@@ -37,6 +37,8 @@ var element =  ("div:has(textarea)").val
 if (element != ) {
     $(this).addClass('past')
 }
+
+//Add bootstrap class depending on event time to change color
 //Use .on method to gray out time blocks depending on 
 $(document).on("click", "past", function() { 
     var text = $(this).text().trim();
