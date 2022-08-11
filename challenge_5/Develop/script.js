@@ -1,46 +1,50 @@
-
-//Create variable for time and date
-const timeDate = document.getElementsByClassName("jumbotron")
-//Create variable to reference each id
-var time1 = $("[id=9]")
-var time2 = $("[id=10]")
-var time3 = $("[id=11]")
-var time4 = $("[id=12]")
-var time5 = $("[id=1]")
-var time6 = $("[id=2]")
-var time7 = $("[id=3]")
-var time8 = $("[id=4]")
-var time9 = $("[id=5]")
-
-var changeTime = moment({hour:7, minute:00})
-var today = new Date(); 
-var hour = today.getHours();
+// localStorage.clear()
+// Local Storage
+let planner_data = (localStorage.getItem("planner_data") !== null) ? JSON.parse(localStorage.getItem("planner_data")) : {"9": "", "10": "", "11": "", "12": "", "1": "", "2": "", "3": "", "4": "", "5": ""}
+var saveSchedule = function(planner_data) {
+    localStorage.setItem("planner_data", JSON.stringify(planner_data))
+}
+// Time and Date variables
+var today = new Date();
+var hour = today.getHours() % 12 || 12;
+// var minutes = today.getMinutes();
+// var time_date = (hour > 12) ? (hour - 12) + ":" + minutes + "PM" : hour + ":" + minutes +"AM";
 console.log(hour)
-
-//Code for Time and Date
+//Time and Date
 $(function() {
-    $(timeDate).append(today)
+    $(currentDay).html(today)
 })
 
-//Make the innerhtml of each id a time between hours of 9-5
 
+console.log(planner_data)
+var addColor = $(".timeblock").each(function(elem) {
+ if ((parseInt($(this).prop("id"))  < (hour))){
+  $(this).addClass("btn btn-secondary")
+ }
+  else if 
+    ((parseInt($(this).prop("id"))  == (hour))){
+             $(this).addClass("btn btn-danger")
+  }       
+  else {
+        $(this).addClass("btn btn-success")
+      }
+})
 
-// //Code to ensure save text when save button is clicked and data persist when page is refreshed
-var saveSchedule = function() {
-    localStorage.setItem()
-}
-// //Declare time then iterate over each element by 1 hour
-// $(".timeBlock").html =
+    
   
-//Function for past,present, and future timeblocks
-var element =  ("div:has(textarea)").val
-if (element != ) {
-    $(this).addClass('past')
-}
+  let textarea = $(this).children("textarea")
+  let button = $(this).children("button")
 
-//Add bootstrap class depending on event time to change color
-//Use .on method to gray out time blocks depending on 
-$(document).on("click", "past", function() { 
-    var text = $(this).text().trim();
-}
+  let id = button.parent().prop("id")
+  textarea.val(planner_data[id]) 
+  button.click(function(){
+    
+    
 
+    planner_data[id] = textarea.val()
+    console.log(planner_data)
+    saveSchedule(planner_data)
+  })
+ 
+  
+  

@@ -26,8 +26,9 @@ textarea{
 }
 
 .timeblock{
-  text-align: center;
-  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  border: black solid;
 }
 
 .row {
@@ -65,6 +66,9 @@ textarea{
   color: white;
 }
 
+.saveBtn{
+margin-left: auto;
+}
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
