@@ -6,6 +6,9 @@ Create a simple calendar application that allows a user to save events for each 
 
 ## Mock-up
 
+![image](https://user-images.githubusercontent.com/104477651/184411230-e3f1fc41-0b7d-4b76-80fb-cef655fcc9d0.png)
+
+
 ## User Story
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
