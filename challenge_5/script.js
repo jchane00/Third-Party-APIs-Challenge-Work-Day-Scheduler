@@ -20,9 +20,8 @@
 
 // Time and Date variables
 var today = new Date();
-var hour = today.getHours() % 12 || 12;
-// var minutes = today.getMinutes();
-// var time_date = (hour > 12) ? (hour - 12) + ":" + minutes + "PM" : hour + ":" + minutes +"AM";
+var hour = today.getHours() % 12 || 12
+
 console.log(hour)
 //Time and Date
 $(function() {
